@@ -1,4 +1,3 @@
-import re
 import tkinter as tk
 
 
@@ -93,9 +92,6 @@ class App(Application):
                 continue
             elif line[0] == '#':
                 self.addTag('good', i + 1, len(line))
-                continue
-            elif not re.match(r'oval \d+.0 \d+.0 \d+.0 \d+.0 \d+.0 \w+ \w+', line):
-                self.addTag('bad', i + 1, len(line))
                 continue
             parameters = line.split()[1:]
             *coords, width, outline, fill = parameters
